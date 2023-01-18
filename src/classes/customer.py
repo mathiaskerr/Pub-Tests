@@ -3,8 +3,10 @@ class Customer:
         self.name = name
         self.wallet = wallet
         self.age = age
-        drunkness = 0
+        self.drunk = 0
 
     def reduce_wallet(self, drink):
         self.wallet -= drink.price
     
+    def increase_drunk(self, drink):
+        self.drunk += drink

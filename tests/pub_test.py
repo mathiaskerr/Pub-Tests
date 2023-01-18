@@ -6,7 +6,7 @@ from src.classes.drinks import Drinks
 class TestPub(unittest.TestCase):
     def setUp(self):
         self.pub = Pub("The Prancing Pony", 100.00)
-        self.drinks = Drinks("Tennents", 5.00)
+        self.drinks = Drinks("Tennents", 5.00, 1)
         self.customer = Customer( "David", 69.00, 16)
 
     def test_pub_has_name(self):
@@ -26,5 +26,4 @@ class TestPub(unittest.TestCase):
         self.assertEqual(105.00, self.pub.till)
 
     def test_check_age(self):
-        # age_check = self.pub.check_age(self.customer)
-        self.assertEqual(False)
+        self.assertEqual(False, self.pub.check_age(self.customer.age))
